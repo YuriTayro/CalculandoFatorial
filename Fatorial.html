@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatorial</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        body{
+            background-color: rgb(145, 156, 43);
+            text-align: center;
+        }
+       h1{
+        font-family: 'Pacifico', cursive;
+        font-weight: normal;
+        font-size: 40px;
+       }
+       #txt1{
+           font-size: 30px;
+       }
+       #txt2{
+        font-size: 30px;
+       }
+       #txtnum{
+        font-size: 20px;
+        font-family: 'Pacifico', cursive;
+       }
+       #but{           
+           background-color: green;
+           color: white;
+           padding: 5px;
+           font-size: 12px;
+       }
+       #resp{
+           background-color: white;
+           width: 50%;
+           border-radius: 10px;
+           margin: auto;
+       }
+       #res{
+           font-family:'Pacifico', cursive;
+           font-weight: normal;
+           text-align: center;
+       }
+       #resD{
+        font-family:'Pacifico', cursive;
+        font-weight: normal;
+        text-align: center;
+       }
+    </style>
+</head>
+<body>
+    <header><h1>Cálculo de Fatorial</h1></header>
+    <section>
+        <div>
+            <p id="txt1">Escreva um número (entre 1 e 21) na caixa a seguir e te mostrarei o Fatorial dele.</p>
+            <p id="txtnum">Número:<input type="number" name="numer" id="numero" placeholder="Número"> 
+                <input type="button" onclick="fatorial()" id="but" value="Fatorial"></p>
+        </div>
+        <div>
+            <p id="txt2">Preencha os dados acima e aperte o botão.</p>
+        </div>
+
+        <div id="resp">
+            <p id="resD"></p>
+            <p id="res"></p>
+        </div>
+    </section>
+    <script>
+        
+        let b = window.document.querySelector('input#but')
+        
+        function fatorial(){
+            let res = window.document.querySelector('p#res')
+            let resD = window.document.querySelector('p#resD')
+            let n = Number(window.document.querySelector('input#numero').value)
+            resD.innerHTML = `Calculando ${n}!`
+            let resultado = 1 /*Principal eetalhe, não esquecer de colocar isso e...*/
+            for(let c = n; c>1; c--){
+                resultado *= c  /*...isso aqui tb!*/
+                res.innerHTML += `${c} x `
+                
+            }
+            res.innerHTML += `1`
+            res.innerHTML += ' = '
+            res.innerHTML += resultado 
+        }
+    </script>
+</body>
+</html>
